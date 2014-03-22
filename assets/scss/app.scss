@@ -1,0 +1,330 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Global Foundation Settings
+@import "foundation/settings";
+
+// You can import only specific elements by adjusting the import below
+@import "foundation";
+
+/* ------------------------------ *\
+    $CONTENTS
+    1.ELEMENTS
+    2.DESIGN PATTERN
+    3.COMPONENT
+    4.ERROR/STATUS
+\* ------------------------------ */
+
+/* ------------------------------ *\
+    $ELEMENTS
+\* ------------------------------ */
+
+
+
+/* ------------------------------ *\
+    $DESIGN PATTERN
+\* ------------------------------ */
+
+
+
+/* ------------------------------ *\
+    $COMPONENT
+\* ------------------------------ */
+
+/* == common ========== */
+$brand-font-size: 14px;
+
+.alignright{
+	text-align: right;
+}
+
+body{
+	background-color: #E8DAC9;
+}
+/* header */
+.header{
+	background: url(../images/share/header-bg.png) repeat left top;
+	padding-bottom: 40px;
+}
+.header-inner{
+	position: relative;
+	background-color: #FFF;
+	padding:10px 20px;
+	margin-bottom: 12px;
+	.logo{
+		width:239px;
+		margin: 0 auto 20px;
+	}
+	.search{
+		@include clearfix;
+		margin-top: 1em;
+		border:1px solid #eaded0;
+		width:260px;
+		margin: 0 auto;
+		#s{
+			float: left;
+			width: 200px;
+			border:none;
+			margin-bottom: 0;
+		}
+		.search-btn{
+			float: left;
+			width:58px;
+			padding:0;
+			background-color: transparent;
+			margin-bottom: 0;
+		}
+	}
+}
+@media #{$medium-up}{
+	.header-inner{
+		.logo{
+			margin: 0;
+		}
+		.search{
+			position: absolute;
+			top:35px;
+			right:20px;
+			margin-top: 0;
+			width:260px;
+		}
+	}
+}
+
+/* global navigation */
+.gnav{
+	.gnav-items{
+		@include clearfix;
+		li{
+			float: left;
+		}
+	}
+}
+
+/* content */
+.content{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+/* footer */
+.footer{
+	.primary{
+		background-color: #f0e7dd;
+		padding-bottom:60px;
+		.support{
+			.supported-by{
+				text-align: center;
+				padding: 0 10px;
+				hr{
+					border-top: 1px solid #e1cdb5;
+				}
+				span{
+					position: relative;
+					top:-30px;
+					font-family: 'Lusitana', serif;
+					color: #c2a98a;
+					background-color: #f0e7dd;
+					padding:5px 10px;
+				}
+			}
+			.supported-list{
+				li{
+					margin-bottom: 2em;
+				}
+			}
+		}
+	}
+	.secondary{
+		background-color: #6A5133;
+		position: relative;
+		padding-bottom: 50px;
+		.toTop{
+			position: absolute;
+			top:-47px;
+			right:50%;
+			margin-right:-95px;
+		}
+		.flogo{
+			text-align: center;
+			margin: 20px 0 35px;
+		}
+		.fnav{
+			text-align: center;
+			margin-bottom: 20px;
+			ul{
+				display: inline-block;
+				text-align: center;
+				margin-left: -22px;
+				li{
+					background: url(../images/share/fnav-icon.png) no-repeat left top;
+					padding-left: 22px;
+					margin-left: 1em;
+					a{
+						color: #e8dac9;
+						text-decoration: none;
+						font-size: $brand-font-size;
+					}
+				}
+			}
+		}
+		.social{
+			text-align: center;
+			margin-bottom: 30px;
+			ul{
+				display: inline-block;
+			}
+		}
+		address{
+			text-align: center;
+			font-size: $brand-font-size;
+			color: #b19778;
+			font-style: normal;
+		}
+	}
+}
+
+@media #{$medium-up}{
+	.footer{
+		.secondary{
+			.toTop{
+				right:0;
+				margin-right: 0;
+			}
+			.flogo{
+				position: absolute;
+				top:-61px;
+				left:50%;
+				margin-left: -53px;				
+			}
+			.fnav{
+				text-align: left;
+				padding-top: 30px;
+				margin-left: 30px;
+			}
+			.social{
+				text-align: left;
+				position: absolute;
+				top:30px;
+				left:58%;
+			}
+		}
+	}
+}
+
+/* == pages ========== */
+
+.pages{
+	h1{
+		font-size: 32px;
+		color: #846848;
+		margin-bottom: .8em;
+	}
+}
+
+/* company */
+.company{
+	.comment{
+		h2{
+			color: #846848;
+			font-size: $brand-font-size;
+		}
+		p{
+			font-size: $brand-font-size;
+		}
+	}
+}
+.company-info{
+	dl{
+		dt,dd{
+			font-size: $brand-font-size;
+		}
+		dt{
+			color: #846848;
+			font-weight: normal;
+			background: url(../images/company/frasc-icon.png) no-repeat left center;
+			padding-left: 1.5em;
+		}
+		dd{
+			margin-left: 1.5em;
+			margin-bottom: 1.5em;
+			a{
+				text-decoration: underline;
+				color:#222;
+			}
+			ul{
+				margin-left: 1.5em;
+				li{
+					font-size: $brand-font-size;
+				}
+			}
+		}
+	}
+}
+
+.publication{
+	background-color: #F0E7DD;
+	border: 1px solid #bca78e;
+	@include radius(12px);
+	.pblc-ttl{
+		color: #846848;
+		background: url(../images/company/frasc-icon.png) no-repeat left center;
+		padding: .5em 0 .5em 1.5em;
+	}
+	.item{
+		padding: 0 1.5em;
+		h3{
+			font-size: $brand-font-size;
+			font-weight: bold;
+		}
+		.item-body{
+			@include clearfix;
+			img{
+				float: left;
+				margin-right: 1.5em;
+			}
+			dl{
+				dt,dd{
+					font-size: $brand-font-size;
+				}
+				dt{
+					font-weight: bold;
+				}
+				dd{
+					a{
+						color: #222;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* privacy policy */
+.policy{
+	h3{
+		color:#846848;
+		font-size: 22px;
+	}
+	ol{
+		padding-left: 1em;
+		li{
+			list-style-type: decimal-leading-zero;
+			ul{
+				li{
+					list-style-type: lower-roman;
+					ul{
+						li{
+							list-style-type: lower-latin;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ------------------------------ *\
+    $ERROR/STATUS
+\* ------------------------------ */
