@@ -683,10 +683,14 @@ body{
 
 @media #{$large}{
 	.archive-body{
-		.row1{ padding-left: 320px; }
-		.row2{ padding-right: 320px; }
 		.item{
 			float: left;
+			&:first-of-type{
+				margin-left:330px;
+			}
+			&:nth-of-type(4){
+				margin-right:330px;
+			}
 			&:last-of-type{
 				margin-right: 0;
 			}

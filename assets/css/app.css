@@ -5577,12 +5577,12 @@ body {
         margin: 0; }
 
 @media only screen and (min-width: 64.063em) {
-  .archive-body .row1 {
-    padding-left: 320px; }
-  .archive-body .row2 {
-    padding-right: 320px; }
   .archive-body .item {
     float: left; }
+    .archive-body .item:first-of-type {
+      margin-left: 330px; }
+    .archive-body .item:nth-of-type(4) {
+      margin-right: 330px; }
     .archive-body .item:last-of-type {
       margin-right: 0; } }
 .ranking .items {
