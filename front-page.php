@@ -31,7 +31,7 @@
 				<div class="cont 
 				<?php if($cat_name == "cat1"): echo "color1"; else: echo "colornone"; endif; ?>
 				">
-				<p class="date"><?php the_date("Y.m.d") ?></p>
+				<p class="date"><?php the_time("Y.m.d") ?></p>
 				<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 				<?php the_excerpt() ?>
 				</div>

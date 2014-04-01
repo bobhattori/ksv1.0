@@ -5544,7 +5544,7 @@ body {
       clear: both; }
   .archive-body .item {
     display: block;
-    margin: 0 auto 1em;
+    margin: 0 10px 1em;
     width: 300px;
     height: 300px;
     overflow: hidden;
@@ -5578,13 +5578,11 @@ body {
 
 @media only screen and (min-width: 64.063em) {
   .archive-body .row1 {
-    padding-left: 330px; }
+    padding-left: 320px; }
   .archive-body .row2 {
-    paddin-right: 330px; }
+    padding-right: 320px; }
   .archive-body .item {
-    float: left;
-    margin-right: 30px;
-    margin-bottom: 30px; }
+    float: left; }
     .archive-body .item:last-of-type {
       margin-right: 0; } }
 .ranking .items {

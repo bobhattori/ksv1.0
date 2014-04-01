@@ -634,7 +634,7 @@ body{
 	}
 	.item{
 		display: block;
-		margin:0 auto 1em;
+		margin:0 10px 1em;
 		width:300px;
 		height:300px;
 		overflow: hidden;
@@ -683,12 +683,10 @@ body{
 
 @media #{$large}{
 	.archive-body{
-		.row1{ padding-left: 330px; }
-		.row2{ paddin-right: 330px; }
+		.row1{ padding-left: 320px; }
+		.row2{ padding-right: 320px; }
 		.item{
 			float: left;
-			margin-right:30px;
-			margin-bottom: 30px;
 			&:last-of-type{
 				margin-right: 0;
 			}

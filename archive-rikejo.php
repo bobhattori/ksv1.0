@@ -18,7 +18,7 @@
 				<div class="items row1">
 					
 					<?php
-						$args = array('post_type' => 'rikejo', 'post_per_page' => 2);
+						$args = array('post_type' => 'rikejo', 'showposts' => 2);
 						$myPosts = get_posts($args);
 						foreach($myPosts as $post): setup_postdata($post);
 						$cat = get_the_category();
@@ -30,7 +30,7 @@
 						<div class="cont 
 						<?php if($cat_name == "cat1"): echo "color1"; else: echo "colornone"; endif; ?> 
 						">
-							<p class="date"><?php the_date("Y.m.d") ?></p>
+							<p class="date"><?php the_time("Y.m.d") ?></p>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
 							<?php the_excerpt() ?>
 						</div>
@@ -42,7 +42,7 @@
 				<div class="items row2">
 					
 					<?php
-						$args = array('post_type' => 'rikejo', 'post_per_page' => 2, 'offset' => 2);
+						$args = array('post_type' => 'rikejo', 'showposts' => 2, 'offset' => 2);
 						$myPosts = get_posts($args);
 						foreach($myPosts as $post): setup_postdata($post);
 						$cat = get_the_category();
@@ -54,7 +54,7 @@
 						<div class="cont 
 						<?php if($cat_name == "物理"): echo "color1"; else: echo "colornone"; endif; ?> 
 						">
-							<p class="date"><?php the_date("Y.m.d") ?></p>
+							<p class="date"><?php the_time("Y.m.d") ?></p>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
 							<?php the_excerpt() ?>
 						</div>
@@ -66,7 +66,7 @@
 				<div class="items row3">
 					
 					<?php
-						$args = array('post_type' => 'rikejo', 'post_per_page' => 3, 'offset' => 4);
+						$args = array('post_type' => 'rikejo', 'showposts' => 3, 'offset' => 4);
 						$myPosts = get_posts($args);
 						foreach($myPosts as $post): setup_postdata($post);
 						$cat = get_the_category();
@@ -78,7 +78,7 @@
 						<div class="cont 
 						<?php if($cat_name == "物理"): echo "color1"; else: echo "colornone"; endif; ?> 
 						">
-							<p class="date"><?php the_date("Y.m.d") ?></p>
+							<p class="date"><?php the_time("Y.m.d") ?></p>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
 							<?php the_excerpt() ?>
 						</div>
@@ -88,6 +88,10 @@
 				</div>
 
 			</section>
+			
+			<div class="pager">
+				<?php if(function_exists("wp_pagenavi")) { wp_pagenavi(); } ?>
+			</div>
 
 		</div>
 	</div>

@@ -34,16 +34,16 @@
       <nav class="gnav">
         <div class="row collapse">
           <div class="large-3 medium-3 small-6 columns">
-            <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav01.png" alt="ステキ★理系女子"></a>
+            <a href="<?php bloginfo('url') ?>/rikejo/"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav01.png" alt="ステキ★理系女子"></a>
           </div>
           <div class="large-3 medium-3 small-6 columns">
-            <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav02.png" alt="キラリ★企業紹介"></a>
+            <a href="<?php bloginfo('url') ?>/company/"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav02.png" alt="キラリ★企業紹介"></a>
           </div>
           <div class="large-3 medium-3 small-6 columns">
-            <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav03.png" alt="STEM Cafe"></a>
+            <a href="<?php bloginfo('url') ?>/stemcafe/"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav03.png" alt="STEM Cafe"></a>
           </div>
           <div class="large-3 medium-3 small-6 columns">
-            <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav04.png" alt="Kawaii x Science News"></a>
+            <a href="<?php bloginfo('url') ?>/k-news"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav04.png" alt="Kawaii x Science News"></a>
           </div>
         </div>
       </nav>
