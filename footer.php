@@ -1,10 +1,24 @@
-    </div>   
-  </div>
 
     <footer class="footer">
   <div class="primary">
     <div class="row">
       <div class="large-12 columns">
+
+        <div class="ranking">
+          <div class="ranking-ttl">アクセスランキング</div>
+
+          <?php wpp_get_mostpopular(
+            "limit=6&
+            range='all'&
+            post_type='rikejo'&
+            stats_comments=0&
+            thumbnail_width=100&
+            thumbnail_height=100&
+            post_html='<li>{thumb} <a href='{url}'>{stats}{text_title}</a> </li>'
+            "
+          ) ?>
+
+        </div>
       
         <div class="support">
           <div class="supported-by">

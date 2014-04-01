@@ -17,4 +17,23 @@ function pagename_class($classes = '') {
 }
 
 add_filter('body_class','pagename_class');
+
+// use thumbnail
+if ( function_exists( 'add_theme_support' ) ) { 
+  add_theme_support( 'post-thumbnails' ); 
+}
+set_post_thumbnail_size(100,100,true);
+
+// add image size for single page
+add_image_size('mainImg',960,438,true);
+
+// customize excerpt
+function new_excerpt_mblength($length){
+	return 40;
+}
+add_filter('excerpt_mblength', 'new_excerpt_mblength');
+function new_excerpt_more($more){
+	return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more')
 ?>

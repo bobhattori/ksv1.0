@@ -10,6 +10,8 @@
       <!-- web fonts -->
       <link href='http://fonts.googleapis.com/css?family=Lusitana' rel='stylesheet' type='text/css'>
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
       <?php wp_head() ?>
 
   </head>
@@ -30,16 +32,21 @@
         </div>
       </div>
       <nav class="gnav">
-  <ul class="no-bullet gnav-items">
-    <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav01.png" alt="ステキ★理系女子"></a></li>
-    <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav02.png" alt="キラリ★企業紹介"></a></li>
-    <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav03.png" alt="STEM Cafe"></a></li>
-    <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav04.png" alt="Kawaii x Science News"></a></li>
-  </ul>
-</nav>
+        <div class="row collapse">
+          <div class="large-3 medium-3 small-6 columns">
+            <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav01.png" alt="ステキ★理系女子"></a>
+          </div>
+          <div class="large-3 medium-3 small-6 columns">
+            <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav02.png" alt="キラリ★企業紹介"></a>
+          </div>
+          <div class="large-3 medium-3 small-6 columns">
+            <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav03.png" alt="STEM Cafe"></a>
+          </div>
+          <div class="large-3 medium-3 small-6 columns">
+            <a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav04.png" alt="Kawaii x Science News"></a>
+          </div>
+        </div>
+      </nav>
     </div>
   </div>
 </header>
-     
-  <div class="row content">
-    <div class="large-12 columns">
