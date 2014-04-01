@@ -8,7 +8,7 @@
 				<div class="items">
 					
 					<?php
-						$args = array('post_type' => 'rikejo');
+						$args = array_merge($wp_query->query,array('post_type' => 'rikejo', 'showposts' =>7));
 						$myPosts = get_posts($args);
 						foreach($myPosts as $post): setup_postdata($post);
 						$cat = get_the_category();
