@@ -3,7 +3,20 @@
   <head>
     <meta charset="<?php bloginfo('charset') ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php if(!is_home()): ?><?php the_title() ?> |<?php endif; ?><?php bloginfo('name') ?></title>
+    <meta name="description" content="<?php
+  $myExcerpt = get_the_excerpt();
+  $tags = array("<p>", "</p>");
+  $myExcerpt = str_replace($tags, "", $myExcerpt);
+  echo $myExcerpt;
+  ?>">
+    <title>
+      <?php if(is_page() or is_single()): ?>
+        <?php the_title() ?> |
+      <?php elseif(is_archive() or is_category()): ?>
+        <?php wp_title("") ?> |
+      <?php endif; ?>
+      <?php bloginfo('name') ?>
+    </title>
       <link href="<?php bloginfo('template_directory') ?>/assets/css/app.min.css" rel="stylesheet" type="text/css" media="all" />
       <script src="<?php bloginfo('template_directory') ?>/assets/js/vendor/modernizr.min.js"></script>
 
@@ -22,7 +35,7 @@
     <div class="large-12 columns">
       <div class="header-inner">
         
-        <h1 class="logo"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/logo.png" alt="カワイイxカガク"></h1>
+        <h1 class="logo"><a href="<?php bloginfo('url') ?>"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/logo.png" alt="カワイイxカガク"></a></h1>
 
         <div class="search">
           <form action="<?php bloginfo('url') ?>">
@@ -34,16 +47,16 @@
       <nav class="gnav">
         <div class="row collapse">
           <div class="large-3 medium-3 small-6 columns">
-            <a href="<?php bloginfo('url') ?>/rikejo/"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav01.png" alt="ステキ★理系女子"></a>
+            <a href="<?php bloginfo('url') ?>/girls"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav01.png" alt="ステキ★理系女子"></a>
           </div>
           <div class="large-3 medium-3 small-6 columns">
-            <a href="<?php bloginfo('url') ?>/company/"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav02.png" alt="キラリ★企業紹介"></a>
+            <a href="<?php bloginfo('url') ?>/companies"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav02.png" alt="キラリ★企業紹介"></a>
           </div>
           <div class="large-3 medium-3 small-6 columns">
-            <a href="<?php bloginfo('url') ?>/stemcafe/"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav03.png" alt="STEM Cafe"></a>
+            <a href="<?php bloginfo('url') ?>/stemcafe"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav03.png" alt="STEM Cafe"></a>
           </div>
           <div class="large-3 medium-3 small-6 columns">
-            <a href="<?php bloginfo('url') ?>/k-news"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav04.png" alt="Kawaii x Science News"></a>
+            <a href="<?php bloginfo('url') ?>/news"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/nav04.png" alt="Kawaii x Science News"></a>
           </div>
         </div>
       </nav>

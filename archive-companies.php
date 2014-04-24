@@ -8,7 +8,7 @@
 				<div class="items">
 					
 					<?php
-						$args = array_merge($wp_query->query,array('post_type' => 'stemcafe', 'showposts' =>7));
+						$args = array_merge($wp_query->query,array('post_type' => 'companies', 'showposts' =>7));
 						$myPosts = get_posts($args);
 						foreach($myPosts as $post): setup_postdata($post);
 						$cat = get_the_category();
@@ -24,7 +24,7 @@
 					<div class="item 
 						<?php if($cat_name == "cat1"): echo "color1"; elseif($cat_name == "cat2"): echo "color2"; else: echo "colornone"; endif; ?> ">
 						<div class="eyecatch-img"><img src="<?php echo $mainImg ?>" alt="<?php the_title() ?>" style="width:300px;"></div>
-					<div class="cont">
+						<div class="cont">
 							<p class="date"><?php the_time("Y.m.d") ?></p>
 							<h2><a href="<?php the_permalink() ?>"><?php if(mb_strlen($post->post_title)>30) { $title= mb_substr($post->post_title,0,30) ; echo $title. ･･･ ;
 } else {echo $post->post_title;}?></a></h2>

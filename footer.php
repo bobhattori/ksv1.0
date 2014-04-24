@@ -9,15 +9,17 @@
 
           <?php wpp_get_mostpopular(
             "limit=6&
+            title_length=20&
             range='all'&
-            post_type='rikejo'&
+            post_type='girls,companies,news,stemcafe'&
             stats_comments=0&
             thumbnail_width=100&
             thumbnail_height=100&
             post_html='<li>{thumb} <a href='{url}'>{stats}{text_title}</a> </li>'
             "
           ) ?>
-
+<a href="<?php the_permalink() ?>"><?php if(mb_strlen($post->post_title)>30) { $title= mb_substr($post->post_title,0,30) ; echo $title. ･･･ ;
+} else {echo $post->post_title;}?></a>
         </div>
       
         <div class="support">
@@ -25,20 +27,12 @@
             <hr>
             <span>supported by</span>
           </div>
-          <ul class="no-bullet supported-list inline-list">
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter01.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter02.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter01.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter02.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter01.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter02.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter01.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter02.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter01.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter02.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter01.png" alt=""></a></li>
-            <li><a href="#"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/supporter02.png" alt=""></a></li>
-          </ul>
+            <?php
+              $page_id = get_page_by_path('supported')->ID;
+              $page = get_post($page_id);
+              $page_con = $page -> post_content;
+            ?>
+            <?php echo $page_con ?>
         </div>
       </div>
     </div>
@@ -54,14 +48,14 @@
         </div>
         <nav class="fnav">
           <ul class="no-bullet inline-list">
-            <li><a href="contact">お問い合わせ</a></li>
-            <li><a href="policy.html">プライバシーポリシー</a></li>
-            <li><a href="company.html">企画運営</a></li>
+            <li><a href="<?php bloginfo('url')?>/contact">お問い合わせ</a></li>
+            <li><a href="<?php bloginfo('url')?>/policy">プライバシーポリシー</a></li>
+            <li><a href="<?php bloginfo('url')?>/anesta">企画運営</a></li>
           </ul>
         </nav>
         <nav class="social">
           <ul class="no-bullet inline-list">
-            <li class="tw"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/twitter.png" alt=""></li>
+            <li class="tw"><a href="https://twitter.com/share" class="twitter-share-button" data-via="bobhattori" data-count="none">Tweet</a></li>
             <li class="fb"><img src="<?php bloginfo('template_directory') ?>/assets/images/share/facebook.png" alt=""></li>
           </ul>
         </nav>
@@ -70,8 +64,10 @@
     </div>
   </div>
 </footer>
-    <script src="assets/js/vendor/jquery.min.js"></script>
-<script src="assets/js/foundation.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/vendor/jquery.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/foundation.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/lib/jquery.bxslider.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/script.js"></script>
 <script>
 $(document).foundation();
 </script>

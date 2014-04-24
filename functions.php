@@ -28,10 +28,10 @@ set_post_thumbnail_size(100,100,true);
 add_image_size('mainImg',960,438,true);
 
 // customize excerpt
-function new_excerpt_mblength($length){
+function new_excerpt_length($length){
 	return 40;
 }
-add_filter('excerpt_mblength', 'new_excerpt_mblength');
+add_filter('excerpt_length', 'new_excerpt_length');
 function new_excerpt_more($more){
 	return '...';
 }

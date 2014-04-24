@@ -15,6 +15,13 @@
 		$writer = get_field('writer');
 		$camera = get_field('camera');
 	?>
+
+	<?php if( "news" == get_post_type() ): ?>
+	<div class="keyvisual">
+		<img src="<?php bloginfo('template_directory') ?>/assets/images/k-news/k-news-kv.jpg" alt="">
+	</div>
+
+	<?php else: ?>
 	<div class="article-header">
 
 		<div class="row">
@@ -38,7 +45,7 @@
 					<div class="large-6 columns prof">
 						<img src="<?php echo $img1 ?>" alt="<?php echo $univ1 ?>">
 						<div class="detail">
-							<p class="name"><?php if('rikejo' == get_post_type()): ?><span class="tip students">学生編</span><?php elseif('company' == get_post_type()): ?><span class="tip comp">企業編</span><?php endif; ?><?php echo $name1 ?></p>
+							<p class="name"><?php if('girls' == get_post_type()): ?><span class="tip students">学生編</span><?php elseif('companies' == get_post_type()): ?><span class="tip comp">企業編</span><?php endif; ?><?php echo $name1 ?></p>
 							<p class="univ"><?php echo $univ1 ?></p>
 							<p class="comment"><?php echo $comment1 ?></p>
 						</div>
@@ -46,7 +53,7 @@
 					<div class="large-6 columns prof">
 						<img src="<?php echo $img1 ?>" alt="<?php echo $univ2 ?>">
 						<div class="detail">
-							<p class="name"><?php if('rikejo' == get_post_type()): ?><span class="tip students">学生編</span><?php elseif('company' == get_post_type()): ?><span class="tip comp">企業編</span><?php endif; ?><?php echo $name2 ?></p>
+							<p class="name"><?php if('girls' == get_post_type()): ?><span class="tip students">学生編</span><?php elseif('companies' == get_post_type()): ?><span class="tip comp">企業編</span><?php endif; ?><?php echo $name2 ?></p>
 							<p class="univ"><?php echo $univ2 ?></p>
 							<p class="comment"><?php echo $comment2 ?></p>
 						</div>
@@ -55,7 +62,8 @@
 					<div class="large-12 columns prof">
 						<img src="<?php echo $img1 ?>" alt="<?php echo $univ1 ?>">
 						<div class="detail">
-							<p class="univ"><?php if('rikejo' == get_post_type()): ?><span class="tip students">学生編</span><?php elseif('company' == get_post_type()): ?><span class="tip comp">企業編</span><?php endif; ?><?php echo $univ1 ?></p>
+							<p class="name"><?php if('girls' == get_post_type()): ?><span class="tip students">学生編</span><?php elseif('companies' == get_post_type()): ?><span class="tip comp">企業編</span><?php endif; ?><?php echo $name1 ?></p>
+							<p class="univ"><?php echo $univ1 ?></p>
 							<p class="comment"><?php echo $comment1 ?></p>
 						</div>						
 					</div>
@@ -68,22 +76,27 @@
 		</div>
 
 	</div>
-
+	<?php endif; ?>
      
   <div class="row content">
     <div class="large-12 columns">
 
 
 	<div class="article">
+		<?php if( 'news' == get_post_type() ): ?>
+		<h1><?php the_title() ?></h1>
+	<?php endif; ?>
 		<?php the_content(); ?>
 		
 		<div class="paging">
 			<?php previous_posts_link('Previous');?>
 			<?php next_posts_link('Next'); ?>
 		</div>
+		<?php if( 'news' != get_post_type() ): ?>
 		<div class="staff">
-			<p>カメラマン：<?php echo $camera ?>｜ライター：<?php echo $writer ?></p>
+			<p><?php if($camera): ?>カメラマン：<?php echo $camera ?>｜<?php endif; ?><?php if($writer): ?>ライター：<?php echo $writer ?><?php endif; ?></p>
 		</div>
+	<?php endif; ?>
 
 	</div>
 
